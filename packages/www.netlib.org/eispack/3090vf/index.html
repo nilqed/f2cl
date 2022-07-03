@@ -1,0 +1,48 @@
+<head>
+<title>eispack/3090vf</title>
+<meta name="waisindex" value="nse">
+</head>
+<h1>eispack/3090vf</h1>
+<p>
+Click <A HREF="http://www.netlib.org/master_counts2.html#eispack/3090vf">here</A> to see the number of accesses to this library.
+<p><hr>
+<pre>
+# The files here comprise a version of EISPACK that has been tuned to
+# take advantage of the cache, the vector registers, and the vectorizing
+# compiler of the IBM 3090-VF.  Some of these files were not modified at
+# all (from the original EISPACK versions), but are included here for
+# completeness.
+
+lib	<a href="paper/">paper</a>
+for	description of changes to eispack
+by	Cline and Meyering
+
+lib	<a href="single/">single</a>
+prec	single
+by	Cline and Meyering
+
+lib	<a href="double/">double</a>
+prec	double
+by	Augustin Dubrulle
+
+# Thus to get the file double precision vectorized tql2 subroutine, say
+#      send tql2 from eispack/3090vf/d.
+# To get the corresponding single precision, say
+#      send tql2 from eispack/3090vf/s.
+# Because the code contains a few IBM-specific constructions not understood
+# by the compiler here, netlib can not provide its customary dependency
+# analysis.  So you have to ask for each subroutine individually.  For a
+# list of subroutines, see the index for (standard) eispack.
+# 
+# Patches posted to the na-digest have been applied to the appropriate
+# files.  For details, "send changes from eispack/3090vf/s".
+# 
+#     A. Cline and J. Meyering, "Converting EISPACK to run efficiently on
+#          a vector processor", Tech. Memo., Pleasant Valley Software,
+#          Austin TX, 1989.
+# 
+#     A.A. Dubrulle, "A version of EISPACK for the IBM 3090VF", TR G320-3510,
+#          IBM Scientific Center, Palo Alto CA, 1988.
+</pre>
+</body>
+</html>

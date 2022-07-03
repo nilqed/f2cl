@@ -1,0 +1,11 @@
+The files in this directory comprise a version of single-precision
+EISPACK that has been tuned to take advantage of the cache, the vector
+registers, and the vectorizing compiler of the ibm 3090-vf.  Some of
+these files were not modified at all (from the original EISPACK versions),
+but are included here for completeness.
+
+The patches posted to the netlib mailing list have been
+applied to the appropriate files.  See the file NETLIB_PATCHES.
+
+For more details, see the paper by Cline and Meyering in the
+directory, ../paper.

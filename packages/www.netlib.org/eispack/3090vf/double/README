@@ -1,0 +1,8 @@
+The files in this directory comprise a version of double-precision
+EISPACK that has been tuned to take advantage of the cache, the vector
+registers, and the vectorizing compiler of the ibm 3090-vf.
+This version is the work of Augustin Dubrulle of IBM's Palo Alto
+Scientific Center.
+
+For more details, see the paper by Cline and Meyering in the
+directory, ../paper.

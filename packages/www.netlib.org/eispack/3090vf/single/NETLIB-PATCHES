@@ -1,0 +1,178 @@
+*** bandr.f.orig	Tue Oct  3 14:04:34 1989
+--- bandr.f	Mon Jan  8 18:57:45 1990
+***************
+*** 98,104 ****
+                 if (g .eq. 0.0e0) go to 600
+                 b1 = a(j1,1) / g
+                 b2 = b1 * d(j1) / d(j)
+!                s2 = 1.0e0 / (1.0e0 + b1 * b2)
+                 if (s2 .ge. 0.5e0 ) go to 450
+                 b1 = g / a(j1,1)
+                 b2 = b1 * d(j) / d(j1)
+--- 98,109 ----
+                 if (g .eq. 0.0e0) go to 600
+                 b1 = a(j1,1) / g
+                 b2 = b1 * d(j1) / d(j)
+!                if (abs(b1) .gt. 1.0e0) then
+!                   u = 1.0e0 / b1
+!                   s2 = u / (u + b2)
+!                else
+!                   s2 = 1.0e0 / (1.0e0 + b1 * b2)
+!                endif
+                 if (s2 .ge. 0.5e0 ) go to 450
+                 b1 = g / a(j1,1)
+                 b2 = b1 * d(j) / d(j1)
+*** comlr2.f.orig	Mon Jan  8 18:31:33 1990
+--- comlr2.f	Mon Jan  8 18:49:49 1990
+***************
+*** 323,331 ****
+  c     .......... end backsubstitution ..........
+        enm1 = n - 1
+  c     .......... vectors of isolated roots ..........
+!       do  840 i = 1, enm1
+           if (i .ge. low .and. i .le. igh) go to 840
+!          do 820 j = i+1, n
+              zr(i,j) = hr(i,j)
+              zi(i,j) = hi(i,j)
+    820    continue
+--- 323,331 ----
+  c     .......... end backsubstitution ..........
+        enm1 = n - 1
+  c     .......... vectors of isolated roots ..........
+!       do  840 i = 1, n
+           if (i .ge. low .and. i .le. igh) go to 840
+!          do 820 j = i, n
+              zr(i,j) = hr(i,j)
+              zi(i,j) = hi(i,j)
+    820    continue
+***************
+*** 333,340 ****
+    840 continue
+  c     .......... multiply by transformation matrix to give
+  c                vectors of original full matrix.
+! c                for j=n step -1 until low+1 do -- ..........
+!       do 880 j = n, low+1, -1
+           m = min0(j,igh)
+  c
+           do 880 i = low, igh
+--- 333,340 ----
+    840 continue
+  c     .......... multiply by transformation matrix to give
+  c                vectors of original full matrix.
+! c                for j=n step -1 until low do -- ..........
+!       do 880 j = n, low, -1
+           m = min0(j,igh)
+  c
+           do 880 i = low, igh
+*** comqr2.f.orig	Tue Oct  3 14:07:59 1989
+--- comqr2.f	Mon Jan  8 18:51:48 1990
+***************
+*** 396,404 ****
+  c     .......... end backsubstitution ..........
+        enm1 = n - 1
+  c     .......... vectors of isolated roots ..........
+!       do  840 i = 1, enm1
+           if (i .ge. low .and. i .le. igh) go to 840
+!          do 820 j = i+1, n
+              zr(i,j) = hr(i,j)
+              zi(i,j) = hi(i,j)
+    820    continue
+--- 396,404 ----
+  c     .......... end backsubstitution ..........
+        enm1 = n - 1
+  c     .......... vectors of isolated roots ..........
+!       do  840 i = 1, n
+           if (i .ge. low .and. i .le. igh) go to 840
+!          do 820 j = i, n
+              zr(i,j) = hr(i,j)
+              zi(i,j) = hi(i,j)
+    820    continue
+***************
+*** 406,413 ****
+    840 continue
+  c     .......... multiply by transformation matrix to give
+  c                vectors of original full matrix.
+! c                for j=n step -1 until low+1 do -- ..........
+!       do 880 j = n, low+1, -1
+           m = min0(j,igh)
+  c
+           do 880 i = low, igh
+--- 406,413 ----
+    840 continue
+  c     .......... multiply by transformation matrix to give
+  c                vectors of original full matrix.
+! c                for j=n step -1 until low do -- ..........
+!       do 880 j = n, low, -1
+           m = min0(j,igh)
+  c
+           do 880 i = low, igh
+*** hqr.f.orig	Mon Jan  8 18:31:13 1990
+--- hqr.f	Mon Jan  8 18:34:06 1990
+***************
+*** 172,178 ****
+           if (notlas) go to 225
+  c     .......... row modification ..........
+  c"    ( prefer vector
+!          do 200 j = k, n
+              foo = h(k,j) + q * h(k+1,j)
+              h(k,j) = h(k,j) - foo * x
+              h(k+1,j) = h(k+1,j) - foo * y
+--- 172,178 ----
+           if (notlas) go to 225
+  c     .......... row modification ..........
+  c"    ( prefer vector
+!          do 200 j = k, en
+              foo = h(k,j) + q * h(k+1,j)
+              h(k,j) = h(k,j) - foo * x
+              h(k+1,j) = h(k+1,j) - foo * y
+***************
+*** 180,186 ****
+  c
+           j = min0(en,k+3)
+  c     .......... column modification ..........
+!          do 210 i = 1, j
+              foo = x * h(i,k) + y * h(i,k+1)
+              h(i,k) = h(i,k) - foo
+              h(i,k+1) = h(i,k+1) - foo * q
+--- 180,186 ----
+  c
+           j = min0(en,k+3)
+  c     .......... column modification ..........
+!          do 210 i = l, j
+              foo = x * h(i,k) + y * h(i,k+1)
+              h(i,k) = h(i,k) - foo
+              h(i,k+1) = h(i,k+1) - foo * q
+***************
+*** 189,195 ****
+    225    continue
+  c     .......... row modification ..........
+  c"    ( prefer vector
+!          do 230 j = k, n
+              foo = h(k,j) + q * h(k+1,j) + r * h(k+2,j)
+              h(k,j) = h(k,j) - foo * x
+              h(k+1,j) = h(k+1,j) - foo * y
+--- 189,195 ----
+    225    continue
+  c     .......... row modification ..........
+  c"    ( prefer vector
+!          do 230 j = k, en
+              foo = h(k,j) + q * h(k+1,j) + r * h(k+2,j)
+              h(k,j) = h(k,j) - foo * x
+              h(k+1,j) = h(k+1,j) - foo * y
+***************
+*** 198,204 ****
+  c
+           j = min0(en,k+3)
+  c     .......... column modification ..........
+!          do 240 i = 1, j
+              foo = x * h(i,k) + y * h(i,k+1) + zz * h(i,k+2)
+              h(i,k) = h(i,k) - foo
+              h(i,k+1) = h(i,k+1) - foo * q
+--- 198,204 ----
+  c
+           j = min0(en,k+3)
+  c     .......... column modification ..........
+!          do 240 i = l, j
+              foo = x * h(i,k) + y * h(i,k+1) + zz * h(i,k+2)
+              h(i,k) = h(i,k) - foo
+              h(i,k+1) = h(i,k+1) - foo * q

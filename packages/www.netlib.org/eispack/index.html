@@ -1,0 +1,320 @@
+<title>EISPACK</title>
+<meta name="waisindex" value="nse">
+<h1>EISPACK</h1>
+Click <A HREF="http://www.netlib.org/master_counts2.html#eispack">here</A> to see the number of accesses to this library.
+
+<p>
+EISPACK is a collection of Fortran subroutines that compute the
+eigenvalues and eigenvectors of nine classes of matrices:
+complex general, complex Hermitian, real general, real symmetric,
+real symmetric banded, real symmetric tridiagonal, special
+real tridiagonal, generalized real, and generalized real symmetric
+matices.  In addition, two routines are included that use singular
+value decomposition to solve certain least-squares problems.
+<p>
+
+EISPACK has been superseded for the most part by 
+<a href="http://www.netlib.org/lapack/">LAPACK</a>.
+<p>
+
+<hr>
+<pre>
+file	<a href="readme">readme</a>
+for	overview of eispack
+
+lib	<a href="3090vf/">3090vf</a>
+by	Cline, Dubrulle, and Meyering
+for	vectorizing on an IBM 3090-VF computer
+,	These codes might be a useful starting point
+,	for vectorized versions on other computers as well.
+
+lib	<a href="ex/">ex</a>
+for	This directory contains a complete set of
+,	testing routines for eispack.
+
+file	<a href="bakvec.f">bakvec.f</a>
+gams	D4c4
+for	back transformation, sign-symmetric matrix
+
+file	<a href="balanc.f">balanc.f</a>
+gams	D4c1a
+for	scaling, general matrix
+
+file	<a href="balbak.f">balbak.f</a>
+gams	D4c4
+for	back scaling, general matrix
+
+file	<a href="bandr.f">bandr.f</a>
+gams	D4c1b1
+for	reduction, symmetric band matrix
+
+file	<a href="bandv.f">bandv.f</a>  <a href="/cgi-bin/netlibfiles.pl?filename=/eispack/bandv.f">bandv.f plus dependencies</a>
+gams	D4c3
+for	some eigenvectors, symmetric band matrix
+
+file	<a href="bisect.f">bisect.f</a>  <a href="/cgi-bin/netlibfiles.pl?filename=/eispack/bisect.f">bisect.f plus dependencies</a>
+gams	D4a5,D4c2a
+for	some eigenvalues, symmetric tridiagonal matrix
+
+file	<a href="bqr.f">bqr.f</a>  <a href="/cgi-bin/netlibfiles.pl?filename=/eispack/bqr.f">bqr.f plus dependencies</a>
+gams	D4a6
+for	some eigenvalues, symmetric band matrix
+
+file	<a href="cbabk2.f">cbabk2.f</a>
+gams	D4c4
+for	back scaling, complex matrix
+
+file	<a href="cbal.f">cbal.f</a>
+gams	D4c1a
+for	scaling, complex matrix
+
+file	<a href="cg.f">cg.f</a>  <a href="/cgi-bin/netlibfiles.pl?filename=/eispack/cg.f">cg.f plus dependencies</a>
+gams	D4a4
+for	find eigenvalues and eigenvectors, complex general matrix
+
+file	<a href="ch.f">ch.f</a>  <a href="/cgi-bin/netlibfiles.pl?filename=/eispack/ch.f">ch.f plus dependencies</a>
+gams	D4a3
+for	find eigenvalues and eigenvectors, complex Hermitian matrix
+
+file	<a href="cinvit.f">cinvit.f</a>  <a href="/cgi-bin/netlibfiles.pl?filename=/eispack/cinvit.f">cinvit.f plus dependencies</a>
+gams	D4c2b
+for	some eigenvectors, complex Hessenberg matrix
+
+file	<a href="combak.f">combak.f</a>
+gams	D4c4
+for	back transformation, complex matrix
+
+file	<a href="comhes.f">comhes.f</a>  <a href="/cgi-bin/netlibfiles.pl?filename=/eispack/comhes.f">comhes.f plus dependencies</a>
+gams	D4c1b2
+for	reduction, complex matrix
+
+file	<a href="comlr.f">comlr.f</a>  <a href="/cgi-bin/netlibfiles.pl?filename=/eispack/comlr.f">comlr.f plus dependencies</a>
+gams	D4c2b
+for	all eigenvalues, complex Hessenberg matrix
+
+file	<a href="comlr2.f">comlr2.f</a>  <a href="/cgi-bin/netlibfiles.pl?filename=/eispack/comlr2.f">comlr2.f plus dependencies</a>
+gams	D4c2b
+for	all eigenvalues and eigenvectors, complex Hessenberg matrix
+
+file	<a href="comqr.f">comqr.f</a>  <a href="/cgi-bin/netlibfiles.pl?filename=/eispack/comqr.f">comqr.f plus dependencies</a>
+gams	D4c2b
+for	all eigenvalues, complex Hessenberg matrix
+
+file	<a href="comqr2.f">comqr2.f</a>  <a href="/cgi-bin/netlibfiles.pl?filename=/eispack/comqr2.f">comqr2.f plus dependencies</a>
+gams	D4c2b
+for	all eigenvalues and eigenvectors, complex Hessenberg matrix
+
+file	<a href="cortb.f">cortb.f</a>
+gams	D4c4
+for	back transformation, complex matrix
+
+file	<a href="corth.f">corth.f</a>  <a href="/cgi-bin/netlibfiles.pl?filename=/eispack/corth.f">corth.f plus dependencies</a>
+gams	D4c1b2
+for	reduction, complex matrix
+
+file	<a href="elmbak.f">elmbak.f</a>
+gams	D4c4
+for	back transformation, real matrix
+
+file	<a href="elmhes.f">elmhes.f</a>
+gams	D4c1b2
+for	reduction, real matrix
+
+file	<a href="eltran.f">eltran.f</a>
+gams	D4c4
+for	reduction, real matrix
+
+file	<a href="figi.f">figi.f</a>
+gams	D4c1c
+for	reduction, sign-symmetric matrix
+
+file	<a href="figi2.f">figi2.f</a>
+gams	D4c1c
+for	reduction, sign-symmetric matrix
+
+file	<a href="hqr.f">hqr.f</a>
+gams	D4c2b
+for	all eigenvalues, real Hessenberg matrix
+
+file	<a href="hqr2.f">hqr2.f</a>  <a href="/cgi-bin/netlibfiles.pl?filename=/eispack/hqr2.f">hqr2.f plus dependencies</a>
+gams	D4c2b
+for	all eigenvalues and eigenvectors, real Hessenberg matrix
+
+file	<a href="htrib3.f">htrib3.f</a>
+gams	D4c4
+for	back transformation, Hermitian packed matrix
+
+file	<a href="htribk.f">htribk.f</a>
+gams	D4c4
+for	back transformation, Hermitian matrix
+
+file	<a href="htrid3.f">htrid3.f</a>  <a href="/cgi-bin/netlibfiles.pl?filename=/eispack/htrid3.f">htrid3.f plus dependencies</a>
+gams	D4c1b1
+for	reduction, Hermitian packed matrix
+
+file	<a href="htridi.f">htridi.f</a>  <a href="/cgi-bin/netlibfiles.pl?filename=/eispack/htridi.f">htridi.f plus dependencies</a>
+gams	D4c1b1
+for	reduction, Hermitian matrix
+
+file	<a href="imtql1.f">imtql1.f</a>  <a href="/cgi-bin/netlibfiles.pl?filename=/eispack/imtql1.f">imtql1.f plus dependencies</a>
+gams	D4a5,D4c2a
+for	all eigenvalues, symmetric tridiagonal matrix
+
+file	<a href="imtql2.f">imtql2.f</a>  <a href="/cgi-bin/netlibfiles.pl?filename=/eispack/imtql2.f">imtql2.f plus dependencies</a>
+gams	D4a5,D4c2a
+for	all eigenvalues and eigenvectors, symmetric tridiagonal matrix
+
+file	<a href="imtqlv.f">imtqlv.f</a>  <a href="/cgi-bin/netlibfiles.pl?filename=/eispack/imtqlv.f">imtqlv.f plus dependencies</a>
+gams	D4a5,D4c2a
+for	all eigenvalues, symmetric tridiagonal matrix
+
+file	<a href="invit.f">invit.f</a>  <a href="/cgi-bin/netlibfiles.pl?filename=/eispack/invit.f">invit.f plus dependencies</a>
+gams	D4c2b
+for	some eigenvectors, real Hessenberg matrix
+
+file	<a href="minfit.f">minfit.f</a>  <a href="/cgi-bin/netlibfiles.pl?filename=/eispack/minfit.f">minfit.f plus dependencies</a>
+gams	D6
+for	least squares, real matrix
+
+file	<a href="ortbak.f">ortbak.f</a>
+gams	D4c4
+for	back transformation, real matrix
+
+file	<a href="orthes.f">orthes.f</a>
+gams	D4c1b2
+for	reduction, real matrix
+
+file	<a href="ortran.f">ortran.f</a>
+gams	D4c4
+for	reduction, real matrix
+
+file	<a href="qzhes.f">qzhes.f</a>
+gams	D4c1b3
+for	reduction, generalized matrix
+
+file	<a href="qzit.f">qzit.f</a>  <a href="/cgi-bin/netlibfiles.pl?filename=/eispack/qzit.f">qzit.f plus dependencies</a>
+gams	D4c1b3
+for	further reduction, generalized Hessenberg matrix
+
+file	<a href="qzval.f">qzval.f</a>
+gams	D4c2c
+for	all eigenvalues, generalized Hessenberg matrix
+
+file	<a href="qzvec.f">qzvec.f</a>
+gams	D4c3
+for	all eigenvectors, generalized Hessenberg matrix
+
+file	<a href="ratqr.f">ratqr.f</a>  <a href="/cgi-bin/netlibfiles.pl?filename=/eispack/ratqr.f">ratqr.f plus dependencies</a>
+gams	D4a5,D4c2a
+for	some eigenvalues, symmetric tridiagonal matrix
+
+file	<a href="rebak.f">rebak.f</a>
+gams	D4c4
+for	back transformation, symmetric generalized matrix
+
+file	<a href="rebakb.f">rebakb.f</a>
+gams	D4c4
+for	back transformation, symmetric generalized matrix
+
+file	<a href="reduc.f">reduc.f</a>
+gams	D4c1c
+for	reduction, symmetric generalized matrix
+
+file	<a href="reduc2.f">reduc2.f</a>
+gams	D4c1c
+for	reduction, symmetric generalized matrix
+
+file	<a href="rg.f">rg.f</a>  <a href="/cgi-bin/netlibfiles.pl?filename=/eispack/rg.f">rg.f plus dependencies</a>
+gams	D4a2
+for	find eigenvalues and eigenvectors, general matrix
+
+file	<a href="rgg.f">rgg.f</a>  <a href="/cgi-bin/netlibfiles.pl?filename=/eispack/rgg.f">rgg.f plus dependencies</a>
+gams	D4b2
+for	find eigenvalues and eigenvectors, generalized matrix
+
+file	<a href="rs.f">rs.f</a>  <a href="/cgi-bin/netlibfiles.pl?filename=/eispack/rs.f">rs.f plus dependencies</a>
+gams	D4a1
+for	find eigenvalues and eigenvectors, symmetric matrix
+
+file	<a href="rsb.f">rsb.f</a>  <a href="/cgi-bin/netlibfiles.pl?filename=/eispack/rsb.f">rsb.f plus dependencies</a>
+gams	D4a6
+for	find eigenvalues and eigenvectors, band symmetric matrix
+
+file	<a href="rsg.f">rsg.f</a>  <a href="/cgi-bin/netlibfiles.pl?filename=/eispack/rsg.f">rsg.f plus dependencies</a>
+gams	D4b1
+for	find eigenvalues and eigenvectors, generalized symmetric matrix
+
+file	<a href="rsgab.f">rsgab.f</a>  <a href="/cgi-bin/netlibfiles.pl?filename=/eispack/rsgab.f">rsgab.f plus dependencies</a>
+gams	D4b1
+for	find eigenvalues and eigenvectors, generalized symmetric matrix
+
+file	<a href="rsgba.f">rsgba.f</a>  <a href="/cgi-bin/netlibfiles.pl?filename=/eispack/rsgba.f">rsgba.f plus dependencies</a>
+gams	D4b1
+for	find eigenvalues and eigenvectors, generalized symmetric matrix
+
+file	<a href="rsm.f">rsm.f</a>  <a href="/cgi-bin/netlibfiles.pl?filename=/eispack/rsm.f">rsm.f plus dependencies</a>
+for	find eigenvalues and eigenvectors, symmetric matrix
+
+file	<a href="rsp.f">rsp.f</a>  <a href="/cgi-bin/netlibfiles.pl?filename=/eispack/rsp.f">rsp.f plus dependencies</a>
+gams	D4a1
+for	find eigenvalues and eigenvectors, packed symmetric matrix
+
+file	<a href="rst.f">rst.f</a>  <a href="/cgi-bin/netlibfiles.pl?filename=/eispack/rst.f">rst.f plus dependencies</a>
+gams	D4a5
+for	find eigenvalues and eigenvectors, tridiagonal symmetric matrix
+
+file	<a href="rt.f">rt.f</a>  <a href="/cgi-bin/netlibfiles.pl?filename=/eispack/rt.f">rt.f plus dependencies</a>
+gams	D4a5
+for	find eigenvalues and eigenvectors, sign-symmetric tridiagonal matrix
+
+file	<a href="svd.f">svd.f</a>  <a href="/cgi-bin/netlibfiles.pl?filename=/eispack/svd.f">svd.f plus dependencies</a>
+gams	D6
+for	singular value decomposition, real matrix
+
+file	<a href="tinvit.f">tinvit.f</a>  <a href="/cgi-bin/netlibfiles.pl?filename=/eispack/tinvit.f">tinvit.f plus dependencies</a>
+gams	D4c3
+for	some eigenvectors, symmetric tridiagonal matrix
+
+file	<a href="tql1.f">tql1.f</a>  <a href="/cgi-bin/netlibfiles.pl?filename=/eispack/tql1.f">tql1.f plus dependencies</a>
+gams	D4a5,D4c2a
+for	all eigenvalues, symmetric tridiagonal matrix
+
+file	<a href="tql2.f">tql2.f</a>  <a href="/cgi-bin/netlibfiles.pl?filename=/eispack/tql2.f">tql2.f plus dependencies</a>
+gams	D4a5,D4c2a
+for	all eigenvalues and eigenvectors, symmetric tridiagonal matrix
+
+file	<a href="tqlrat.f">tqlrat.f</a>  <a href="/cgi-bin/netlibfiles.pl?filename=/eispack/tqlrat.f">tqlrat.f plus dependencies</a>
+gams	D4a5,D4c2a
+for	all eigenvalues, symmetric tridiagonal matrix
+
+file	<a href="trbak1.f">trbak1.f</a>
+gams	D4c4
+for	back transformation, symmetric matrix
+
+file	<a href="trbak3.f">trbak3.f</a>
+gams	D4c4
+for	back transformation, packed symmetric matrix
+
+file	<a href="tred1.f">tred1.f</a>
+gams	D4c1b1
+for	reduction, symmetric matrix
+
+file	<a href="tred2.f">tred2.f</a>
+gams	D4c1b1
+for	reduction, symmetric matrix
+
+file	<a href="tred3.f">tred3.f</a>
+gams	D4c1b1
+for	reduction, packed symmetric matrix
+
+file	<a href="tridib.f">tridib.f</a>  <a href="/cgi-bin/netlibfiles.pl?filename=/eispack/tridib.f">tridib.f plus dependencies</a>
+gams	D4a5,D4c2a
+for	some eigenvalues, symmetric tridiagonal matrix
+
+file	<a href="tsturm.f">tsturm.f</a>  <a href="/cgi-bin/netlibfiles.pl?filename=/eispack/tsturm.f">tsturm.f plus dependencies</a>
+gams	D4a5,D4c2a
+for	some eigenvalues and eigenvectors, symmetric tridiagonal matrix
+
+</pre>
+</body>
+</html>
